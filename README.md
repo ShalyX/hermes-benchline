@@ -1,8 +1,8 @@
-# Benchline (working name)
+# Benchline
 
 ## Install from GitHub
 
-Once the repository is public, install directly with:
+Install directly from GitHub:
 
 ```bash
 hermes plugins install ShalyX/hermes-benchline --enable
@@ -72,7 +72,7 @@ Python 3.10+; runtime uses only the standard library. Linux is the only platform
 python -m unittest discover -s tests -v
 ```
 
-Current Hermes source at `a2fa0a4b649b7f3a771cf92f1ae43059eeec76e6` was used to run the admission validator core (15 checks passed, zero warnings) and Plugin Doctor (runtime registration passed) in temporary isolated `HERMES_HOME` contexts. The installed Hermes 0.19.0 CLI lacks those newer subcommands; re-run the validator against the exact public commit before filing the catalog PR.
+Hermes source at `1400400907b0259b0f9865358950d9bf6ea28184` was used directly to run the current admission validator and Plugin Doctor against the public Benchline repository. Admission validation passed 15 checks with zero warnings; Plugin Doctor passed runtime registration in a temporary isolated `HERMES_HOME`. The installed Hermes 0.19.0 CLI does not expose those newer subcommands; the current source implementations were called directly.
 
 ## License
 
