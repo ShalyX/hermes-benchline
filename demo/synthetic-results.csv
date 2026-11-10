@@ -1,0 +1,6 @@
+patient_id,specimen_id,analyte,result,unit
+PSEUDO-001,SYN-001,marker_alpha,8.0,unit_a
+PSEUDO-002,SYN-002,marker_alpha,14.0,unit_a
+PSEUDO-003,SYN-003,marker_alpha,23.5,unit_a
+PSEUDO-004,SYN-004,marker_beta,not-a-number,unit_b
+PSEUDO-005,SYN-005,marker_gamma,5.0,unit_c
