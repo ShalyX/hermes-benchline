@@ -14,7 +14,7 @@ After the catalog entry is accepted, users can also install by catalog name:
 hermes plugins install benchline --enable
 ```
 
-The catalog entry is not accepted yet; catalog-name installation will not work until then.
+Catalog-name installation depends on acceptance of the upstream catalog entry.
 
 Benchline is a native Hermes plugin for one focused workflow: locally preflight a *numeric-result CSV export* before a lab operator hands it off to another system. The operator chooses a single file, supplies the lab-owned analyte/unit map and its source/version, and gets a deterministic, row-based QC report.
 
@@ -31,7 +31,7 @@ The report is a deterministic QC summary; it may include aggregate row/issue cou
 
 ## Scope and prior art
 
-The current upstream Hermes catalog includes `health-insights` (v0.3.2, pinned at `d6d09c1f17ada6ca60368a1e0c7a7b5bd4efefc6`), which analyzes Apple Health/HealthRelay data and includes lab-result workflows. It operates through a separate CLI and portable skills against a local health database; it can retain imported lab data and send printed values to the configured model/provider. Benchline is narrower: a one-file numeric CSV preflight that checks structure and exact unit labels, without trends, interpretation, persistence or database access. The live catalog directory contains no `benchline.yaml` (the direct upstream path returned 404). This is a meaningful workflow distinction, but the overlap is real and the catalog maintainer still decides whether it is sufficiently distinct.
+The current upstream Hermes catalog includes `health-insights` (v0.3.2, pinned at `d6d09c1f17ada6ca60368a1e0c7a7b5bd4efefc6`), which analyzes Apple Health/HealthRelay data and includes lab-result workflows. It operates through a separate CLI and portable skills against a local health database; it can retain imported lab data and send printed values to the configured model/provider. Benchline is narrower: a one-file numeric CSV preflight that checks structure and exact unit labels, without trends, interpretation, persistence or database access. No Benchline entry existed at upstream main commit `1400400907b0259b0f9865358950d9bf6ea28184`; this submission proposes one. This is a meaningful workflow distinction, but the overlap is real and the catalog maintainer still decides whether it is sufficiently distinct.
 
 ## Safety and privacy
 
@@ -66,7 +66,7 @@ The tool call also supplies a run-specific map and provenance label:
 
 ## Development
 
-Python 3.10+; runtime uses only the standard library. Linux is the only platform tested for this draft.
+Python 3.10+; runtime uses only the standard library. Linux is the only verified platform.
 
 ```bash
 python -m unittest discover -s tests -v
